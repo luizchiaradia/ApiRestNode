@@ -10,6 +10,7 @@ describe("Transactions routes", () => {
   });
 
   afterAll(async () => {
+    execSync("npx knex migrate:rollback --all");
     await app.close();
   });
 
